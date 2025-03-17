@@ -2,16 +2,19 @@
     "name": "lonelyproger/framework",
     "description": "lonelyproger framework",
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Lonelyproger\\Framework\\": "src/"
-        }
-    },
+    "version": "0.1",
     "authors": [
         {
             "name": "lonelyproger",
             "email": "lonelyproger@mail.ru"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Lonelyproger\\Framework\\": "src"
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    }
 }
