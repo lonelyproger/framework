@@ -1,0 +1,17 @@
+{
+    "name": "lonelyproger/framework",
+    "description": "lonelyproger framework",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Lonelyproger\\Framework\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lonelyproger",
+            "email": "lonelyproger@mail.ru"
+        }
+    ],
+    "require": {}
+}
