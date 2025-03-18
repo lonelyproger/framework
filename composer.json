@@ -14,7 +14,7 @@
             "Lonelyproger\\Framework\\": "src"
         },
         "files": [
-            "functions.php"
+            "src/Core/functions.php"
         ]
     },
     "require": {
