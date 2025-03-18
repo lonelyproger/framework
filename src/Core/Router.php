@@ -28,11 +28,15 @@ class Router
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
-
         if ($callback === false) {
             return "404";
         }
-
-        return call_user_func($callback);
+        var_dump($GLOBALS['app']->basePath());
+        if (gettype($callback) == 'string') {
+            $ns = substr($callback, 0, strrpos($callback, '\\'));
+            return call_user_func($callback);
+        } else {
+            return call_user_func($callback);
+        }
     }
 }
