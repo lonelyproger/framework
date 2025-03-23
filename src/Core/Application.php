@@ -24,12 +24,12 @@ class Application
     }
     public function basePath($path = '')
     {
-        var_dump(get_defined_functions()['user']);
         return join_paths($this->basePath, $path);
     }
 
     public function run()
     {
-        echo $this->router->resolve();
+        $result = $this->router->resolve();
+        var_dump($result);
     }
 }

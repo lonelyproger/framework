@@ -2,7 +2,6 @@
 
 namespace Lonelyproger\Framework\Core;
 
-var_dump(1111111111111111);
 if (! function_exists('Lonelyproger\Framework\Core\join_paths')) {
     /**
      * Join the given paths together.
