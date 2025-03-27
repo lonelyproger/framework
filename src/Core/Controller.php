@@ -6,6 +6,7 @@ use BadMethodCallException;
 
 class Controller
 {
+    public $content = '';
     /**
      * Execute an action on the controller.
      *

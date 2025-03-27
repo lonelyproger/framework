@@ -30,6 +30,6 @@ class Application
     public function run()
     {
         $result = $this->router->resolve();
-        var_dump($result);
+        print $result;
     }
 }
