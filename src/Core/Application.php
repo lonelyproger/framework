@@ -3,7 +3,6 @@
 namespace Lonelyproger\Framework\Core;
 
 use function Lonelyproger\Framework\Core\join_paths;
-use function Lonelyproger\Framework\Core;
 
 class Application
 {

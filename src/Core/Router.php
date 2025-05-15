@@ -25,18 +25,22 @@ class Router
 
     public function resolve()
     {
-        $path = $this->request->getPath();
-        $method = $this->request->getMethod();
-        $callback = $this->routes[$method][$path[0]] ?? false;
+        $callback = $this->routes[$this->request->method][$this->request->path] ?? false;
         if ($callback === false) {
-            return "404";
+            return Render::view(404);
         }
-        if (gettype($callback) == 'string') {
-            $cb = new $callback;
-            // var_dump($cb->content->template_content);
-            return $cb->content;
-        } else {
-            return call_user_func($callback, $path);
+        switch (gettype($callback) == 'string') {
+            case 'string':
+                $cb = new $callback;
+                return $cb();
+                break;
+            case 'array':
+                $cb = new $callback[0];
+                return $cb->{$callback[1]}($this->request);
+                break;
+            default:
+                return call_user_func($callback, $this->request);
+                break;
         }
     }
 }
